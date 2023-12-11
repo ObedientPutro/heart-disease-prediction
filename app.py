@@ -1,5 +1,3 @@
-pip3 install -U scikit-learn scipy matplotlib
-
 import numpy as np
 import pandas as pd
 import streamlit as st
