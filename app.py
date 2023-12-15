@@ -50,16 +50,15 @@ def startPredict():
     print(row)
     predictor = Predictor()
     o = predictor.has_disease(row)
-    st.subheader("Prediction Result")
-    st.write("Accuracy: " + scoreRate)
+    outputContainer.write("Accuracy: " + scoreRate)
     if (o == True):
         print("Pasien Terdiagnosa Mengalami Penyakit Jantung")
         la="Pasien Terdiagnosa Mengalami Penyakit Jantung"
-        st.write(la)
+        outputContainer.write(la)
     else:
         print("Pasien Sehat")
         la="Pasien Sehat"
-        st.write(la)
+        outputContainer.write(la)
     return True
 
 # Input Field
@@ -121,3 +120,5 @@ thal = st.radio(
 )
 
 st.button('Predict', on_click=startPredict)
+outputContainer = st.container()
+outputContainer.subheader("Prediction Result")
